@@ -1,34 +1,11 @@
-<turbo-frame id="review-form">
-    <div class="container mb-8 px-5 mx-auto max-w-2xl ">
-    {% if review.id %}
-       <div class="p-4 mb-5 text-sm text-blue-100 rounded-lg bg-gray-700 dark:bg-gray-800 dark:text-blue-500" role="alert">
-        <span class="font-medium">Thanks for the review!</span>
-      </div>
-    {% else %}
-        <form method="post" action="{{ path('app_application_job_form', { id: jobId }) }}" class="text-white bg-gray-800 p-8 rounded-lg" data-turbo-frame="review-form">
+<turbo-frame id="job-form">
+      <form method="post" action="{{ path('app_application_job_form', { id: job.id }) }}" data-turbo-frame="job-form">
+        <textarea name="job_application_type_form[coverLetter]" class="w-full p-2 border rounded mb-3" rows="6"
+                  placeholder="Votre lettre de motivation..."></textarea>
 
-
-            <div class="mb-4">
-                <label for="{{ form.comment.vars.id }}" class="block text-white font-semibold mb-2">
-                    Your review
-                </label>
-                {{ form_widget(form.comment) }}
-            </div>
-            <div class="mb-4">
-                {% if form_errors(form.review) %}
-                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                    {{ form_errors(form.review) }}
-                </div>
-                {% endif %}
-            </div>
-            {{ form_row(form._token) }}
-            <button type="submit"
-                    class="cursor-pointer px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                Post review
-            </button>
-
-
-        </form>
-    {% endif %}
-    </div>
+        <button type="submit" class="bg-secondary text-white px-4 py-2 rounded">
+          Envoyer ma candidature
+        </button>
+        {{ form_row(form._token) }}
+      </form>
 </turbo-frame>

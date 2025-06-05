@@ -18,7 +18,7 @@ class JobApplicationTypeForm extends AbstractType
             $builder
               ->add('coverLetter', TextareaType::class, [
                 'label' => 'Your review',
-                'required' => false,
+                'required' => true,
                 'attr' => [
                     'rows' => 5,
                     'class' => 'bg-gray-800 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent',

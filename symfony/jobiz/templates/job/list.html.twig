@@ -36,7 +36,7 @@
       <div class="bg-white p-4 rounded shadow">
         <h3 class="font-bold text-lg">{{ job.title }}</h3>
         <p class="text-sm text-gray-600">{{ job.company }} – {{ job.country }}</p>
-        <a href="{{ path('job_show', { id: job.id }) }}" class="text-secondary mt-2 inline-block">Voir plus</a>
+        <a href="{{ path('app_job_show', { id: job.id }) }}" class="text-secondary mt-2 inline-block">Voir plus</a>
       </div>
     {% endfor %}
   </div>

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ job.title }}{% endblock %}
+
+{% block body %}
+  <div class="bg-white p-6 rounded shadow">
+    <h1 class="text-3xl font-bold mb-2">{{ job.title }}</h1>
+    <p class="text-gray-600">
+      {{ job.company }} – {{ job.city }}, {{ job.country }}
+    </p>
+
+    <p class="mt-4 whitespace-pre-line">{{ job.description }}</p>
+  </div>
+
+  {% if app.user %}
+    <div class="mt-6 bg-gray-100 p-4 rounded">
+      <h2 class="text-xl font-semibold mb-2">Postuler à cette offre</h2>
+
+      <turbo-frame id="job-form" src="{{ path('app_application_job_form', { id: job.id }) }}">
+        Chargement du formulaire...
+      </turbo-frame>
+
+    </div>
+  {% else %}
+    <p class="mt-4 text-sm text-gray-700">
+      <a href="{{ path('app_login') }}" class="text-secondary underline">Connectez-vous</a>
+      pour postuler à cette offre.
+    </p>
+  {% endif %}
+{% endblock %}

@@ -6,6 +6,7 @@ use App\Repository\JobApplicationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: JobApplicationRepository::class)]
 class JobApplication
 {
@@ -79,4 +80,13 @@ class JobApplication
         return $this;
     }
 
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): static
+       {
+           $this->createdAt = new \DateTimeImmutable();
+   
+   
+           return $this;
+       }
+   
 }

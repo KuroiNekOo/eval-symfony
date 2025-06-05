@@ -16,10 +16,12 @@ final class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
-    #[Route('/about', name: 'app_about')]
-    public function about(JobRepository $jobRepository): Response
-    {
 
-        return $this->render('page/about.html.twig', []);
+    #[Route('/about', name: 'app_about')]
+    public function about(): Response
+    {
+        return $this->render('page/about.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
     }
 }

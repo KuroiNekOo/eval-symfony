@@ -47,16 +47,18 @@ final class JobApplicationController extends AbstractController
         $form = $this->createForm(JobApplicationTypeForm::class, $jobApplication);
         $form->handleRequest($request);
 
-
         if ($form->isSubmitted() && $form->isValid()) {
+
+
             $em->persist($jobApplication);
             $em->flush();
-        }
+        } 
+  
 
 
         return $this->render('job_application/_form.html.twig', [
             'form' => $form->createView(),
-            'jobId' => $job->getId(),
+            'job' => $job,
             'jobApplication' => $jobApplication
         ]);
     }
