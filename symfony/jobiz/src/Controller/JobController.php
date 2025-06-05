@@ -33,4 +33,16 @@ final class JobController extends AbstractController
         ]);
 
     }
+
+    // #[Route('/job/{id}/form', name: 'app_job_show_form')]
+    // public function showForm(Job $job): Response
+    // {
+
+    //     $user = $this->getUser();
+
+    //     return $this->render('job/show.html.twig', [
+    //       'job' => $job,
+    //     ]);
+
+    // }
 }
