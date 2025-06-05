@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos{% endblock %}
+
+{% block body %}
+  <section class="prose lg:prose-xl mx-auto">
+    <h1 class="text-3xl font-bold">À propos de Jobiz</h1>
+    <p class="mb-4">
+      Jobiz est une plateforme dédiée à la mise en relation entre recruteurs du monde tech
+      et les talents d’aujourd’hui et de demain.
+    </p>
+    <img src="{{ asset('images/team.jpg') }}" alt="Équipe Jobiz" class="rounded shadow">
+  </section>
+{% endblock %}
