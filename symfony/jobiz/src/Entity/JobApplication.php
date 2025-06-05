@@ -78,4 +78,5 @@ class JobApplication
 
         return $this;
     }
+
 }
