@@ -1,0 +1,31 @@
+GDoc : https://docs.google.com/document/d/1vGMs9AIw7Zv3uUe-cbLZzzfzKVeTBvcSDHpbU19F4rM/edit?tab=t.0
+
+docker compose build --no-cache
+docker compose up -d
+docker compose down
+docker exec -it name sh/bash
+
+# creer l'app symfony
+symfony new "name" --version="6.4.*" --webapp
+
+# check les requirements
+symfony check:requirements
+
+
+
+
+
+# Autres
+docker-compose restart nginx
+
+
+
+# NGINIX
+NGINX reçoit les requêtes sur le port 8080, les envoie à PHP-FPM via fastcgi_pass, et Symfony prend le relais via public/index.php
+
+
+# Terminal VSCODE
+sudo chmod -R 777 symfony
+
+# clear cache app
+symfony console cache:clear
